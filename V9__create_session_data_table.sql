@@ -1,7 +1,5 @@
 CREATE TABLE session_data (
-    session_id TEXT PRIMARY_KEY,
-    user_id INTEGER PRIMARY KEY,
-    last_accessed TEXT,
-    
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
+    session_id TEXT PRIMARY_KEY NOT NULL,
+    user_id INTEGER REFERENCES users(id),
+    last_accessed DATETIME 
+) WITHOUT ROWID;
